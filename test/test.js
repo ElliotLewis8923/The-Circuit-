@@ -1,7 +1,10 @@
+process.env.NODE_ENV = 'test';
+
 var server = require('../app');
 var chai = require('chai');
 var expect = chai.expect;
 var Browser = require('zombie')
+
 
 describe('Homepage', function() {
 	var browser;
@@ -9,7 +12,7 @@ describe('Homepage', function() {
 	before(function() {
 		server = server.listen(3000);
 		browser = new Browser()
-		
+
 	});
 
 	it('should display a header', function() {
