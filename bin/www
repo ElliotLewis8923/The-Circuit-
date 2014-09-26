@@ -2,7 +2,7 @@
 var debug = require('debug')('the-circuit');
 var app = require('../app');
 var http = require('http')
-var db = require('./models');
+var db = require('../models');
 
 app.set('port', process.env.PORT || 3000);
 

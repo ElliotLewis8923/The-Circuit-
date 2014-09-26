@@ -3,20 +3,7 @@ process.env.NODE_ENV = 'test';
 var server = require('../app');
 var chai = require('chai');
 var expect = chai.expect;
-var Browser = require('zombie')
-
-// db
-//   .sequelize
-//   .sync({ force: true })
-//   .complete(function(err) {
-//     if (err) {
-//       throw err[0]
-//     } else {
-//       http.createServer(app).listen(app.get('port'), function(){
-//         console.log('Express server listening on port ' + app.get('port'))
-//       })
-//     }
-//   })
+var Browser = require('zombie');
 
 
 describe('Homepage', function() {
@@ -33,6 +20,14 @@ describe('Homepage', function() {
 			expect(browser.text('header')).to.eql('The Circuit');
 		});
 	});
+
+	it('fill in a form to create a game', function() {
+		browser.visit("http://localhost:3000/", function() {
+			expect(browser.text('fortwrgwdf')).to.eql("Player 1 namePlayer 1 scorePlayer 2 namePlayer 2 score");
+		});
+	});
+
+
 
 
 });
